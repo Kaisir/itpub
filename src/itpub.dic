@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary:DictionaryTables xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dictionary="http://com.wisedu.emap.dictionary/1.0">
+  <dictionaryTable dicType="BASIC" id="2c4b900c-a031-4980-9555-0c32fe4491cc" keyColumn="DM" name="itpub通用字典" orderColumn="PX" ref="T_ITPUB_COMMON_DIC" refAction="model:T_ITPUB_COMMON_DIC.QUERY" typeColumn="SSZD" valueColumn="MC"/>
+</dictionary:DictionaryTables>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- restful接口的API配置汇总 -->
+<apis>
+	<!-- 1．获取人员各消费类型消费总量 -->
+	<api>
+		<apiId>getConsumeProportionByMonth</apiId>
+		<serviceId>15b3c6be98e0</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-stuAPI-get_ConsumeProportionByMonth/ProxyService/mdb_service_web-restful-stuAPI-get_ConsumeProportionByMonthProxyService</accessUrl>
+	</api>
+	<!-- 2. 根据消费类别获取人员每月消费明细 -->
+	<api>
+		<apiId>getConsumeDetailByMonth</apiId>
+		<serviceId>3453ce5135b2</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-stuAPI-get_ConsumeDetailByMonth/ProxyService/mdb_service_web-restful-stuAPI-get_ConsumeDetailByMonthProxyService</accessUrl>
+	</api>
+	<!-- 3. 获取卡户信息 -->
+    <!-- 
+	<api>
+		<apiId>getCardInfo</apiId>
+		<serviceId>4cd22bff25bc</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-stuAPI-get_CardInfo/ProxyService/mdb_service_web-restful-stuAPI-get_CardInfoProxyService</accessUrl>
+	</api>
+     -->
+	<api>
+		<apiId>getCardInfo</apiId>
+		<serviceId>bba6d59e91fc</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-stuAPI-get_CardInfoWithBalance/ProxyService/mdb_service_web-restful-stuAPI-get_CardInfoWithBalanceProxyService</accessUrl>
+	</api>
+	<!-- 4. 获取最近一个月每日消费总额 -->
+	<api>
+		<apiId>getConsumeTotalByDay</apiId>
+		<serviceId>ed5aa5a5f6e1</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-stuAPI-get_ConsumeTotalByDay/ProxyService/mdb_service_web-restful-stuAPI-get_ConsumeTotalByDayProxyService</accessUrl>
+	</api>
+	<!-- 5. 根据人员的id获取人员的基本信息 -->
+	<api>
+		<apiId>getUserInfosByIds</apiId>
+		<serviceId>deffead15d91</serviceId>
+		<accessUrl>/mdm_cs_auth_web-restful-users-get_userInfosByIds/ProxyService/cs_auth_web-restful-users-get_userInfosByIdsProxyService</accessUrl>
+	</api>
+	<!-- 6. 获取所有的单位信息 -->
+	<api>
+		<apiId>getDeptInfo</apiId>
+		<serviceId>b9d89fa8e627</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-deptAPI-getDeptInfo/ProxyService/mdb_service_web-restful-deptAPI-getDeptInfoProxyService</accessUrl>
+	</api>
+	<!-- 7. 获取组织结构树信息 -->
+	<api>
+		<apiId>getDeptTreeInfo</apiId>
+		<serviceId>6c6c8383bb4f</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-infoStandard-get_ChildrenInfo/ProxyService/mdb_service_web-restful-infoStandard-get_ChildrenInfoProxyService</accessUrl>
+	</api>
+	<!-- 8. 根据条件获取人员信息 -->
+	<api>
+		<apiId>getUsersInfoByType</apiId>
+		<serviceId>5542719c4b61</serviceId>
+		<accessUrl>/mdm_cs_auth_web-restful--users-get_UsersInfo/ProxyService/cs_auth_web-restful--users-get_UsersInfoProxyService</accessUrl>
+	</api>
+	<!-- 9. 根据动态条件搜索人员信息 -->
+	<api>
+		<apiId>getUsersInfoByCond</apiId>
+		<serviceId>5324a70f0b5e</serviceId>
+		<accessUrl>/mdm_cs_auth_web-restful-groupReadAPI-search_groupuser/ProxyService/cs_auth_web-restful-groupReadAPI-search_groupuserProxyService</accessUrl>
+	</api>
+	<!-- 10. 消息发送 推送到相应的位置 -->
+	<api>
+		<apiId>msgRemaindSend</apiId>
+		<serviceId>747f74d9da04</serviceId>
+		<accessUrl>/mp_message_pocket_web-mp-restful-message-send/ProxyService/message_pocket_web-mp-restful-message-sendProxyService</accessUrl>
+	</api>
+	<!-- 11. 根据失物招领的卡号(身份证/一卡通/学生证)查询此卡号持有者的联系方式 -->
+	<api>
+		<apiId>getContactByTypeAndCardCode</apiId>
+		<serviceId>6b7095544e56</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-staffBasicInfoAPI-searchStaffInfo/ProxyService/mdb_service_web-restful-staffBasicInfoAPI-searchStaffInfoProxyService</accessUrl>
+	</api>
+	<!-- 12. 根据职工号或学号获取照片 -->
+	<api>
+		<apiId>getPhotoById</apiId>
+		<serviceId>cb265d6abcd9</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-hrAPI-getPhotoById/ProxyService/mdb_service_web-restful-hrAPI-getPhotoByIdProxyService</accessUrl>
+	</api>
+	<!-- 13. 获取指定时间段的一卡通消费总额和最高消费 -->
+	<api>
+		<apiId>getSmartCardSurvey</apiId>
+		<serviceId>5d20c8fd52b5</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-stuAPI-getConsumeByDay/ProxyService/mdb_service_web-restful-stuAPI-getConsumeByDayProxyService</accessUrl>
+	</api>
+	<!-- 14. 获取单月的我的工资的信息 -->
+	<api>
+		<apiId>getMySalaryByMonth</apiId>
+		<serviceId>955134c85a30</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-salaryInfo-getSalaryInfoByMonth/ProxyService/mdb_service_web-restful-salaryInfo-getSalaryInfoByMonthProxyService</accessUrl>
+	</api>
+	<!-- 15. 通过用户组/角色的ID获取其下的用户 -->
+	<api>
+		<apiId>getUsersByGroupId</apiId>
+		<serviceId>02e2347fccea</serviceId>
+		<accessUrl>/mdm_cs_auth_web-restful-groupReadAPI-get_usersByGroupId/ProxyService/cs_auth_web-restful-groupReadAPI-get_usersByGroupIdProxyService</accessUrl>
+	</api>
+	<!-- 16. 消息发送 推送到相应的位置 并且返回消息的id -->
+	<api>
+		<apiId>sendMsgWithIdBack</apiId>
+		<serviceId>70cceaf3b320</serviceId>
+		<accessUrl>/mp_message_pocket_web-mp-restful-platform-message-send/ProxyService/message_pocket_web-mp-restful-platform-message-sendProxyService</accessUrl>
+	</api>
+	<!-- 17. 根据传入的消息的ID获取消息的已读和未读情况 -->
+	<api>
+		<apiId>getMsgReadStatus</apiId>
+		<serviceId>3bc512c9c197</serviceId>
+		<accessUrl>/mp_message_pocket_web-mp-restful-platform-msg-isread-count/ProxyService/message_pocket_web-mp-restful-platform-msg-isread-countProxyService</accessUrl>
+	</api>
+	<!-- 18. 查询按拼音排序的用户 -->
+	<api>
+		<apiId>getUserWithSpell</apiId>
+		<serviceId>0c1e89be436e</serviceId>
+		<accessUrl>/mdm_cs_auth_web-restful-groupReadAPI-searchUserWithSpell/ProxyService/cs_auth_web-restful-groupReadAPI-searchUserWithSpellProxyService</accessUrl>
+	</api>
+	<!-- 19.查询带电话，办公室电话和职务的教师 -->
+	<api>
+		<apiId>getTeacherInfo</apiId>
+		<serviceId>278242335c32</serviceId>
+		<accessUrl>/mdm_cs_auth_web-restful-groupReadAPI-getTeacherInfo/ProxyService/cs_auth_web-restful-groupReadAPI-getTeacherInfoProxyService</accessUrl>
+	</api>
+	<!-- 20.搜索部门 -->
+	<api>
+		<apiId>searchDeptByName</apiId>
+		<serviceId>8b2561dca402</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-deptAPI-searchDeptByName/ProxyService/mdb_service_web-restful-deptAPI-searchDeptByNameProxyService</accessUrl>
+	</api>
+	<!-- 21.获取所有部门 -->
+	<api>
+		<apiId>getAllDepts</apiId>
+		<serviceId>f260f64885fa</serviceId>
+		<accessUrl>/mdm_mdb_service_web-restful-deptAPI-getDeptParentInfo/ProxyService/mdb_service_web-restful-deptAPI-getDeptParentInfoProxyService</accessUrl>
+	</api>
+	<!-- 22.获取用户的详细信息 -->
+	<api>
+		<apiId>getUserDetailInfoByIds</apiId>
+		<serviceId>08c594023765</serviceId>
+		<accessUrl>/mdm_cs_auth_web-restful-users-getUsersWithDeptDetail2/ProxyService/cs_auth_web-restful-users-getUsersWithDeptDetail2ProxyService</accessUrl>
+	</api>
+	<!-- 2016-8-17 19:08:28 -->
+	<!-- 23.根据人员ID获取人员获取人员完整部门信息 -->
+	<api>
+	   <apiId>getUserInfoWithAllDeptsDetail</apiId>
+	   <serviceId>9c75183e806a</serviceId>
+	   <accessUrl>/mdm_cs_auth_web-restful-users-getUserInfoWithAllDeptsDetail/ProxyService/cs_auth_web-restful-users-getUserInfoWithAllDeptsDetailProxyService</accessUrl>
+	</api>
+    <!-- 24.获取教职工详细信息 -->
+    <api>
+       <apiId>getUserDetailInfo</apiId>
+       <serviceId>9e346f838db1</serviceId>
+       <accessUrl>/mdm_cs_auth_web-restful-users-getUserDetailInfo/ProxyService/cs_auth_web-restful-users-getUserDetailInfoProxyService</accessUrl>
+    </api>
+    <!-- 2017-02-20 -->
+    <!-- 根据消息的id删除消息 -->
+    <api>
+       <apiId>deleteMsgById</apiId>
+       <serviceId>ed4689d8f252</serviceId>
+       <accessUrl>/mp_message_pocket_web-mp-platform-message-deleteMsg/ProxyService/message_pocket_web-mp-platform-message-deleteMsgProxyService</accessUrl>
+    </api>
+    <!-- 2017-04-28 -->
+    <!-- searchUserWithBracket -->
+    <api>
+       <apiId>searchUserWithBracket</apiId>
+       <serviceId>45ca41dacabe</serviceId>
+       <accessUrl>/mdm_cs_auth_web-restful-groupReadAPI-searchUserWithBracket/ProxyService/cs_auth_web-restful-groupReadAPI-searchUserWithBracketProxyService</accessUrl>
+    </api>
+    <!-- 2017-06-30 -->
+    <!-- 获取本科生基本信息 -->
+    <api>
+       <apiId>getUndergraduateInfo</apiId>
+       <serviceId>ESOP_10000000084</serviceId>
+       <accessUrl>/mdm_cs_auth_web-rest-common-student-getUndergraduateInfo/ProxyService/cs_auth_web-rest-common-student-getUndergraduateInfoProxyService</accessUrl>
+    </api>
+    
+</apis>

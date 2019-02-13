@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="根据appId获取域的相关信息" name="getDomainsByAppId" type="WS">
+    <wservice targetNamespace="http://domain.impl.api.web.mdbservice.wisedu.com/" url="http://172.16.1.104:8081/mdm_DomainReadAPIImplService/ProxyService/DomainReadAPIImplServiceProxyService?WSDL">
+      <method name="checkDomainRole" namespace="http://domain.ws.api.mdbservice.wisedu.com/" serviceName="DomainReadAPIImplService" soapAction="" urlEnd="/mdm_DomainReadAPIImplService/ProxyService/DomainReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="param" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>checkDomainRoleRequest"/>
+        <result collection="false" name="checkDomainRoleResponse>BaseResult" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>baseResult"/>
+      </method>
+      <method name="getDomainAppRelations" namespace="http://domain.ws.api.mdbservice.wisedu.com/" serviceName="DomainReadAPIImplService" soapAction="" urlEnd="/mdm_DomainReadAPIImplService/ProxyService/DomainReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="baseRequest" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>baseRequest"/>
+        <result collection="false" name="getDomainAppRelationsResponse>DomainAppResponse" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>domainAppResponse"/>
+      </method>
+      <method name="searchDomain" namespace="http://domain.ws.api.mdbservice.wisedu.com/" serviceName="DomainReadAPIImplService" soapAction="" urlEnd="/mdm_DomainReadAPIImplService/ProxyService/DomainReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="searchRquest" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>searchRequest"/>
+        <result collection="false" name="searchDomainResponse>DomainResponse" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>domainResponse"/>
+      </method>
+      <method name="getAppIdsByDomain" namespace="http://domain.ws.api.mdbservice.wisedu.com/" serviceName="DomainReadAPIImplService" soapAction="" urlEnd="/mdm_DomainReadAPIImplService/ProxyService/DomainReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="domainId" primitive="true" type="string"/>
+        <result collection="false" name="getAppIdsByDomainResponse>AppResponse" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>appResponse"/>
+      </method>
+      <method name="getDomainsByAppId" namespace="http://domain.ws.api.mdbservice.wisedu.com/" serviceName="DomainReadAPIImplService" soapAction="" urlEnd="/mdm_DomainReadAPIImplService/ProxyService/DomainReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="true">
+        <param collection="false" name="appId" primitive="true" type="string"/>
+        <result collection="false" name="getDomainsByAppIdResponse>DomainResponse" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>domainResponse"/>
+      </method>
+      <method name="getAllDomain" namespace="http://domain.ws.api.mdbservice.wisedu.com/" serviceName="DomainReadAPIImplService" soapAction="" urlEnd="/mdm_DomainReadAPIImplService/ProxyService/DomainReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="baseRequest" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>baseRequest"/>
+        <result collection="false" name="getAllDomainResponse>DomainResponse" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>domainResponse"/>
+      </method>
+      <method name="searchDomainByName" namespace="http://domain.ws.api.mdbservice.wisedu.com/" serviceName="DomainReadAPIImplService" soapAction="" urlEnd="/mdm_DomainReadAPIImplService/ProxyService/DomainReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="searchRquest" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>searchRequest"/>
+        <result collection="false" name="searchDomainByNameResponse>DomainResponse" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>domainResponse"/>
+      </method>
+      <method name="getDomainById" namespace="http://domain.ws.api.mdbservice.wisedu.com/" serviceName="DomainReadAPIImplService" soapAction="" urlEnd="/mdm_DomainReadAPIImplService/ProxyService/DomainReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="domainId" primitive="true" type="string"/>
+        <result collection="false" name="getDomainByIdResponse>DomainResponse" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>domainResponse"/>
+      </method>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>checkDomainRoleRequest" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param name="appId" primitive="true" type="string"/>
+        <param name="userId" primitive="true" type="string"/>
+      </type>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>baseResult" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param name="code" primitive="true" type="int"/>
+        <param name="msg" primitive="true" type="string"/>
+      </type>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>baseRequest" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>page"/>
+      </type>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>page" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param name="order" primitive="true" type="string"/>
+        <param name="orderBy" primitive="true" type="string"/>
+        <param name="pageNum" primitive="true" type="int"/>
+        <param name="pageSize" primitive="true" type="int"/>
+      </type>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>domainAppResponse" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="domainApp" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>domainApp[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>domainApp[0,unbounded] wrapped" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param dimensions="[]" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>domainApp"/>
+      </type>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>domainApp" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param name="appId" primitive="true" type="string"/>
+        <param name="domainId" primitive="true" type="string"/>
+        <param name="domainName" primitive="true" type="string"/>
+      </type>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>searchRequest" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="condition" primitive="true" type="string"/>
+      </type>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>domainResponse" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="domains" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>domain[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>domain[0,unbounded] wrapped" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param dimensions="[]" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>domain"/>
+      </type>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>domain" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param name="description" primitive="true" type="string"/>
+        <param name="domainId" primitive="true" type="string"/>
+        <param name="domainName" primitive="true" type="string"/>
+      </type>
+      <type name="http://domain.ws.api.mdbservice.wisedu.com/>appResponse" namespace="http://domain.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://domain.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="appIds" primitive="true" type="string[0,unbounded] wrapped"/>
+      </type>
+      <type name="string[0,unbounded] wrapped" namespace="http://www.w3.org/2001/XMLSchema">
+        <param dimensions="[]" primitive="true" type="string"/>
+      </type>
+      <header name="serviceId" value="f92a9969f0c7"/>
+      <header name="appId" value="baseApp"/>
+      <header name="accessToken" value="B839329EAA6587AD6E2AB0CF60C279D3"/>
+    </wservice>
+  </actionModel>
+</model:Model>

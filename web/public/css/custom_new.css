@@ -1,0 +1,11 @@
+table th.check {
+	width: 32px;
+}
+.choose-person-row {
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.whry-item:hover i {
+	display: inline-block;
+}
