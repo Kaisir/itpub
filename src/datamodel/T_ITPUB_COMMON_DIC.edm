@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model" dataSource="DB_EMAP_BIZ_BASE">
+  <dataModel name="T_ITPUB_COMMON_DIC" queryOrder="" type="table">
+    <item caption="WID" colName="WID" length="40" name="WID" pK="true" type="String">
+      <attribute name="enabled" value="true"/>
+      <attribute name="defaultValue" value="env:custom.guid"/>
+      <attribute name="prepare" value="checkWID_onlyEmpty"/>
+      <attribute name="defaultValueUseInModify" value="false"/>
+    </item>
+    <item caption="字典的代码" colName="DM" length="20" name="DM" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="字典的名称" colName="MC" length="45" name="MC" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="字典排序" colName="PX" length="10" name="PX" type="long">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="是否使用" colName="SFSY" length="2" name="SFSY" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="所属字典" colName="SSZD" length="20" name="SSZD" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="所属系统" colName="SSXT" length="50" name="SSXT" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <rowFactors/>
+  </dataModel>
+</model:Model>

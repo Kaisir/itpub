@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dbVersion>
+	<!-- T_ITPUB_PROPS -->
+	<table name="T_ITPUB_PROPS" desc="itpub的系统常量">
+		<column name="WID" type="String(40)" desc="WID" />
+		<column name="XT" type="String(20)" desc="所属的系统" />
+		<column name="NAME" type="String(50)" desc="常量的中文说明" />
+		<column name="KEY" type="String(50)" desc="常量的键" />
+		<column name="VALUE" type="String(400)" desc="常量的值" />
+	</table>
+	<index name="PK_T_ITPUB_PROPS" type="key" tableName="T_ITPUB_PROPS">
+		<column name="WID" />
+	</index>
+</dbVersion>

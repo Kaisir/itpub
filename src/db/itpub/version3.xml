@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dbVersion>
+	<!-- 添加调用流程中心API的数据库配置 -->
+	<!--T_ITPUB_PROPS_MSG -->
+	<table name="T_ITPUB_PROPS_MSG" desc="itpub消息发送的内容配置">
+		<column name="WID" type="String(40)" desc="主键" nullable="false" />
+		<column name="KEY" type="String(150)" desc="键" nullable="true" />
+		<column name="VALUE" type="String(1500)" desc="值" nullable="true" />
+		<column name="DESCRIPTION" type="String(3000)" desc="描述" nullable="true" />
+		<column name="BELONG_TO" type="String(50)" desc="所属系统" nullable="true" />
+	</table>
+	<index name="PK_T_ITPUB_PROPS_MSG" type="key" tableName="T_ITPUB_PROPS_MSG">
+		<column name="WID" />
+	</index>
+	<table name="T_ITPUB_COMMON_DIC" desc="itpub通用字典">
+		<column name="WID" type="String(40)" desc="WID" />
+		<column name="DM" type="String(20)" desc="字典的代码" />
+		<column name="MC" type="String(45)" desc="字典的名称" />
+		<column name="PX" type="int" desc="字典排序" />
+		<column name="SFSY" type="String(2)" desc="是否使用" />
+		<column name="SSZD" type="String(20)" desc="所属字典" />
+		<column name="SSXT" type="String(50)" desc="所属系统"/>
+	</table>
+	<index name="PK_T_ITPUB_COMMON_DIC" type="key" tableName="T_ITPUB_COMMON_DIC">
+		<column name="WID" />
+	</index>
+	<data>
+		INSERT INTO T_ITPUB_COMMON_DIC (WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'M', '男', '0', '1', 'SEX')
+	</data>
+	<data>
+		INSERT INTO T_ITPUB_COMMON_DIC (WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'F', '女', '1', '1', 'SEX')
+	</data>
+	<data>
+		INSERT INTO T_ITPUB_COMMON_DIC (WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'SFZ', '身份证', '0', '1', 'ID_TYPE')
+	</data>
+	<data>
+		INSERT INTO T_ITPUB_COMMON_DIC (WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'JSZ', '驾驶证', '1', '1', 'ID_TYPE')
+	</data>
+	<data>
+		INSERT INTO T_ITPUB_COMMON_DIC (WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'HZ', '护照', '2', '1', 'ID_TYPE')
+	</data>
+	<data>
+		INSERT INTO T_ITPUB_COMMON_DIC (WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'QT', '其他证件', '3', '1', 'ID_TYPE')
+	</data>
+	<data>
+		INSERT INTO T_ITPUB_COMMON_DIC (WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'A', '待审核', '0', '1', 'AUDIT')
+	</data>
+	<data>
+		INSERT INTO T_ITPUB_COMMON_DIC (WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'P', '审核通过', '1', '1', 'AUDIT')
+	</data>
+	<data>
+		INSERT INTO T_ITPUB_COMMON_DIC (WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'N', '审核不通过', '2', '1', 'AUDIT')
+	</data>
+	<data>
+		INSERT INTO T_ITPUB_COMMON_DIC (WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'D', '草稿', '-1', '1', 'AUDIT')
+	</data>
+	<!-- 添加通用的是或者否的选项字典 -->
+	<data>
+		MERGE INTO T_ITPUB_COMMON_DIC T USING (SELECT 'YES' DM FROM dual) N ON (T.DM = N.DM) WHEN NOT MATCHED THEN
+		INSERT(WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'YES', '是', '1', '1', 'COMMON_STATE')
+	</data>
+	<data>
+		MERGE INTO T_ITPUB_COMMON_DIC T USING (SELECT 'NO' DM FROM dual) N ON (T.DM = N.DM) WHEN NOT MATCHED THEN
+		INSERT(WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'NO', '否', '2', '1', 'COMMON_STATE')
+	</data>
+</dbVersion>

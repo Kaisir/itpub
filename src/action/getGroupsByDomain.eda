@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="查询所有用户组信息" name="getGroupsByDomain" type="WS">
+    <wservice targetNamespace="http://group.impl.api.web.mdbservice.wisedu.com/" url="http://172.16.1.104:8081/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService?WSDL">
+      <method name="dynaSearchUser" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="dynaSearchRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>dynaSearchRequest"/>
+        <result collection="false" name="dynaSearchUserResponse>UserInfoNewResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>userInfoNewResponse"/>
+      </method>
+      <method name="getGroupsSumInfo" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="true" dimensions="[]" name="groupIds" primitive="true" type="string"/>
+        <result collection="false" name="getGroupsSumInfoResponse>GroupSumResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupSumResponse"/>
+      </method>
+      <method name="GetGroupByGroupID" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="groupId" primitive="true" type="string"/>
+        <result collection="false" name="GetGroupByGroupIDResponse>GroupResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupResponse"/>
+      </method>
+      <method name="getGroupUserInfosByLike" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="groupUserInfosRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupUserInfosByLikeRequest"/>
+        <result collection="false" name="getGroupUserInfosByLikeResponse>UserInfoNewResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>userInfoNewResponse"/>
+      </method>
+      <method name="GetUsersByGroupID" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="groupRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupRequest"/>
+        <result collection="false" name="GetUsersByGroupIDResponse>UserInfoResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>userInfoResponse"/>
+      </method>
+      <method name="CheckGroup" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="groupId" primitive="true" type="string"/>
+        <result collection="false" name="CheckGroupResponse>FlagResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>flagResponse"/>
+      </method>
+      <method name="searchGroupInfo" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="groupInfoRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupInfoRequest"/>
+        <result collection="false" name="searchGroupInfoResponse>GroupInfoResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupInfoResponse"/>
+      </method>
+      <method name="GetGroupsByGroupIds" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="true" dimensions="[]" name="groupIds" primitive="true" type="string"/>
+        <result collection="false" name="GetGroupsByGroupIdsResponse>GroupsResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupsResponse"/>
+      </method>
+      <method name="getGlobalGroups" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="baseRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>baseRequest"/>
+        <result collection="false" name="getGlobalGroupsResponse>GroupsResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupsResponse"/>
+      </method>
+      <method name="searchUsers" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="searchRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>searchRequest"/>
+        <result collection="false" name="searchUsersResponse>UserInfoResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>userInfoNewResponse"/>
+      </method>
+      <method name="getGroupsByDomain" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="true">
+        <param collection="false" name="domainGroupRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>domainGroupRequest"/>
+        <result collection="false" name="getGroupsByDomainResponse>GroupsResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupsResponse"/>
+      </method>
+      <method name="GetUsersByStaticGroupID" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="groupRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupRequest"/>
+        <result collection="false" name="GetUsersByStaticGroupIDResponse>UserInfoResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>userInfoResponse"/>
+      </method>
+      <method name="GetGroupsByUserId" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="userRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>userRequest"/>
+        <result collection="false" name="GetGroupsByUserIdResponse>GroupsResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupsResponse"/>
+      </method>
+      <method name="getUsersByGroupIDNew" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="groupRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupRequest"/>
+        <result collection="false" name="getUsersByGroupIDNewResponse>UserInfoNewResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>userInfoNewResponse"/>
+      </method>
+      <method name="GetAllGroups" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="baseRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>baseRequest"/>
+        <result collection="false" name="GetAllGroupsResponse>GroupsResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupsResponse"/>
+      </method>
+      <method name="searchUsersByIDOrName" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="condition" primitive="true" type="string"/>
+        <result collection="false" name="searchUsersByIDOrNameResponse>UserInfoResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>userInfoResponse"/>
+      </method>
+      <method name="searchGroupsByIDOrName" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="condition" primitive="true" type="string"/>
+        <result collection="false" name="searchGroupsByIDOrNameResponse>GroupsResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupsResponse"/>
+      </method>
+      <method name="getGroupsByUserIdAndAppId" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="userId" primitive="true" type="string"/>
+        <param collection="false" name="appId" primitive="true" type="string"/>
+        <result collection="false" name="getGroupsByUserIdAndAppIdResponse>GroupsResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupsResponse"/>
+      </method>
+      <method name="dynaSearchGroupUser" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="dynaSearchUsersRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>dynaSearchUsersRequest"/>
+        <result collection="false" name="dynaSearchGroupUserResponse>DynaSearchGroupUserResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>dynaSearchGroupResponse"/>
+      </method>
+      <method name="groupDeptCountInfo" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="bpmGroupDeptRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>bpmGroupDeptRequest"/>
+        <result collection="false" name="groupDeptCountInfoResponse>bpmGroupDeptResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>bpmGroupDeptResponse"/>
+      </method>
+      <method name="getDomainGroups" namespace="http://group.ws.api.mdbservice.wisedu.com/" serviceName="GroupReadAPIImplService" soapAction="" urlEnd="/mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param collection="false" name="baseRequest" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>baseRequest"/>
+        <result collection="false" name="getDomainGroupsResponse>GroupsResponse" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupsResponse"/>
+      </method>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>dynaSearchRequest" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="searchCondition" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>searchCondition[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>page" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="order" primitive="true" type="string"/>
+        <param name="orderBy" primitive="true" type="string"/>
+        <param name="pageNum" primitive="true" type="int"/>
+        <param name="pageSize" primitive="true" type="int"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>searchCondition[0,unbounded] wrapped" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param dimensions="[]" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>searchCondition"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>searchCondition" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="searchBy" primitive="true" type="string"/>
+        <param name="searchCondition" primitive="true" type="string"/>
+        <param name="searchContent" primitive="true" type="string"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>userInfoNewResponse" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="redisInfo" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>redisInfoNew[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>redisInfoNew[0,unbounded] wrapped" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param dimensions="[]" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>redisInfoNew"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>redisInfoNew" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="className" primitive="true" type="string"/>
+        <param name="id" primitive="true" type="string"/>
+        <param name="name" primitive="true" type="string"/>
+        <param name="school" primitive="true" type="string"/>
+        <param name="sexCode" primitive="true" type="string"/>
+        <param name="sexName" primitive="true" type="string"/>
+        <param name="type" primitive="true" type="string"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>groupSumResponse" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="groups" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupSumInfo[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>groupSumInfo[0,unbounded] wrapped" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param dimensions="[]" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>groupSumInfo"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>groupSumInfo" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="domainCode" primitive="true" type="string"/>
+        <param name="domainName" primitive="true" type="string"/>
+        <param name="groupId" primitive="true" type="string"/>
+        <param name="name" primitive="true" type="string"/>
+        <param name="userNum" primitive="true" type="int"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>groupResponse" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="groups" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>group"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>group" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="creator" primitive="true" type="string"/>
+        <param name="description" primitive="true" type="string"/>
+        <param name="domainCode" primitive="true" type="string"/>
+        <param name="domainName" primitive="true" type="string"/>
+        <param name="groupId" primitive="true" type="string"/>
+        <param name="inType" primitive="true" type="short"/>
+        <param name="isDyna" primitive="true" type="short"/>
+        <param name="lastModifier" primitive="true" type="string"/>
+        <param name="name" primitive="true" type="string"/>
+        <param name="num" primitive="true" type="string"/>
+        <param name="userCheckSql" primitive="true" type="string"/>
+        <param name="usersContainsSql" primitive="true" type="string"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>groupUserInfosByLikeRequest" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="businessDomain" primitive="true" type="string"/>
+        <param name="groupId" primitive="true" type="string"/>
+        <param name="userIdOrName" primitive="true" type="string"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>groupRequest" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="groupId" primitive="true" type="string"/>
+        <param name="uid" primitive="true" type="string"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>userInfoResponse" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="usersInfo" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>usersInfo[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>usersInfo[0,unbounded] wrapped" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param dimensions="[]" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>usersInfo"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>usersInfo" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="id" primitive="true" type="string"/>
+        <param name="name" primitive="true" type="string"/>
+        <param name="type" primitive="true" type="int"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>flagResponse" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="flag" primitive="true" type="boolean"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>groupInfoRequest" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="businessDomains" primitive="true" type="string[0,unbounded] wrapped"/>
+        <param name="groupName" primitive="true" type="string"/>
+      </type>
+      <type name="string[0,unbounded] wrapped" namespace="http://www.w3.org/2001/XMLSchema">
+        <param dimensions="[]" primitive="true" type="string"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>groupInfoResponse" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="groups" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>group[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>group[0,unbounded] wrapped" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param dimensions="[]" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>group"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>groupsResponse" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="groups" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>group[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>baseRequest" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>searchRequest" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="condition" primitive="true" type="string"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>domainGroupRequest" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="domain" primitive="true" type="string"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>userRequest" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="userId" primitive="true" type="string"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>dynaSearchUsersRequest" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="conditions" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>searchConditions[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>searchConditions[0,unbounded] wrapped" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param dimensions="[]" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>searchConditions"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>searchConditions" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="searchBy" primitive="true" type="string"/>
+        <param name="searchCondition" primitive="true" type="string"/>
+        <param name="searchContent" primitive="true" type="string"/>
+        <param name="searchJoin" primitive="true" type="string"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>dynaSearchGroupResponse" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="users" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>bpmUserInfo[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>bpmUserInfo[0,unbounded] wrapped" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param dimensions="[]" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>bpmUserInfo"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>bpmUserInfo" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="className" primitive="true" type="string"/>
+        <param name="deptCode" primitive="true" type="string"/>
+        <param name="deptName" primitive="true" type="string"/>
+        <param name="id" primitive="true" type="string"/>
+        <param name="name" primitive="true" type="string"/>
+        <param name="positions" primitive="true" type="string"/>
+        <param name="sexCode" primitive="true" type="string"/>
+        <param name="sexName" primitive="true" type="string"/>
+        <param name="type" primitive="true" type="string"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>bpmGroupDeptRequest" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="groupIds" primitive="true" type="string[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>bpmGroupDeptResponse" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="msg" primitive="true" type="string"/>
+        <param name="page" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>page"/>
+        <param name="status" primitive="true" type="int"/>
+        <param name="total" primitive="true" type="int"/>
+        <param name="bpmGroupDeptInfos" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>bpmGroupDeptInfo[0,unbounded] wrapped"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>bpmGroupDeptInfo[0,unbounded] wrapped" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param dimensions="[]" primitive="false" type="http://group.ws.api.mdbservice.wisedu.com/>bpmGroupDeptInfo"/>
+      </type>
+      <type name="http://group.ws.api.mdbservice.wisedu.com/>bpmGroupDeptInfo" namespace="http://group.ws.api.mdbservice.wisedu.com/">
+        <param name="count" primitive="true" type="int"/>
+        <param name="school" primitive="true" type="string"/>
+        <param name="schoolcode" primitive="true" type="string"/>
+      </type>
+      <header name="serviceId" value="59d60961c7e0"/>
+      <header name="appId" value="baseApp"/>
+      <header name="accessToken" value="B839329EAA6587AD6E2AB0CF60C279D3"/>
+    </wservice>
+  </actionModel>
+</model:Model>

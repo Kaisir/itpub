@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:model="http://www.wisedu.com/emap/model/model">
+  <actionModel caption="根据用户和应用查询关联的用户组" name="getGroupsByAppIdAndUserId" type="WS">
+    <wservice targetNamespace="http://app.impl.api.web.mdbservice.wisedu.com/" url="http://172.16.1.104:8081/mdm_AppReadAPIImplService/ProxyService/AppReadAPIImplServiceProxyService?wsdl">
+      <method name="getGroupsByAppId" namespace="http://app.ws.api.mdbservice.wisedu.com/" serviceName="AppReadAPIImplService" soapAction="" urlEnd="/mdm_AppReadAPIImplService/ProxyService/AppReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param name="appId" primitive="true" type="string"/>
+        <result name="getGroupsByAppIdResponse>GroupsResponse" primitive="false" type="groupsResponse"/>
+      </method>
+      <method name="getRolesByAppId" namespace="http://app.ws.api.mdbservice.wisedu.com/" serviceName="AppReadAPIImplService" soapAction="" urlEnd="/mdm_AppReadAPIImplService/ProxyService/AppReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param name="appId" primitive="true" type="string"/>
+        <result name="getRolesByAppIdResponse>GroupsResponse" primitive="false" type="roleResponse"/>
+      </method>
+      <method name="getGroupsByAppIdAndUserId" namespace="http://app.ws.api.mdbservice.wisedu.com/" serviceName="AppReadAPIImplService" soapAction="" urlEnd="/mdm_AppReadAPIImplService/ProxyService/AppReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="true">
+        <param name="userAppRequest" primitive="false" type="userAppRequest"/>
+        <result name="getGroupsByAppIdAndUserIdResponse>GroupsResponse" primitive="false" type="groupsResponse"/>
+      </method>
+      <method name="getAppIdsByGroupId" namespace="http://app.ws.api.mdbservice.wisedu.com/" serviceName="AppReadAPIImplService" soapAction="" urlEnd="/mdm_AppReadAPIImplService/ProxyService/AppReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param name="groupId" primitive="true" type="string"/>
+        <result name="getAppIdsByGroupIdResponse>IdsResponse" primitive="false" type="idsResponse"/>
+      </method>
+      <method name="getAppsByUserId" namespace="http://app.ws.api.mdbservice.wisedu.com/" serviceName="AppReadAPIImplService" soapAction="" urlEnd="/mdm_AppReadAPIImplService/ProxyService/AppReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param name="userId" primitive="true" type="string"/>
+        <result name="getAppsByUserIdResponse>GroupsResponse" primitive="false" type="appResponse"/>
+      </method>
+      <method name="getGroupsByAppIdAndRoleId" namespace="http://app.ws.api.mdbservice.wisedu.com/" serviceName="AppReadAPIImplService" soapAction="" urlEnd="/mdm_AppReadAPIImplService/ProxyService/AppReadAPIImplServiceProxyService" urlStart="http://172.16.1.104:8081" used="false">
+        <param name="appId" primitive="true" type="string"/>
+        <param name="roleId" primitive="true" type="string"/>
+        <result name="getGroupsByAppIdAndRoleIdResponse>GroupsResponse" primitive="false" type="groupsResponse"/>
+      </method>
+      <type name="groupsResponse">
+        <param name="baseResponse>msg" primitive="true" type="string"/>
+        <param name="baseResponse>page" primitive="false" type="page"/>
+        <param name="baseResponse>status" primitive="true" type="int"/>
+        <param name="baseResponse>total" primitive="true" type="int"/>
+        <param name="groupsResponse>groups" primitive="false" type="group[0,unbounded] wrapped"/>
+      </type>
+      <type name="page">
+        <param name="page>order" primitive="true" type="string"/>
+        <param name="page>orderBy" primitive="true" type="string"/>
+        <param name="page>pageNum" primitive="true" type="int"/>
+        <param name="page>pageSize" primitive="true" type="int"/>
+      </type>
+      <type name="group[0,unbounded] wrapped">
+        <param dimensions="[]" primitive="false" type="group"/>
+      </type>
+      <type name="group">
+        <param name="group>creator" primitive="true" type="string"/>
+        <param name="group>description" primitive="true" type="string"/>
+        <param name="group>domainCode" primitive="true" type="string"/>
+        <param name="group>domainName" primitive="true" type="string"/>
+        <param name="group>groupId" primitive="true" type="string"/>
+        <param name="group>inType" primitive="true" type="short"/>
+        <param name="group>isDyna" primitive="true" type="short"/>
+        <param name="group>lastModifier" primitive="true" type="string"/>
+        <param name="group>name" primitive="true" type="string"/>
+        <param name="group>num" primitive="true" type="string"/>
+        <param name="group>userCheckSql" primitive="true" type="string"/>
+        <param name="group>usersContainsSql" primitive="true" type="string"/>
+      </type>
+      <type name="roleResponse">
+        <param name="baseResponse>msg" primitive="true" type="string"/>
+        <param name="baseResponse>page" primitive="false" type="page"/>
+        <param name="baseResponse>status" primitive="true" type="int"/>
+        <param name="baseResponse>total" primitive="true" type="int"/>
+        <param name="roleResponse>role" primitive="false" type="role[0,unbounded] wrapped"/>
+      </type>
+      <type name="role[0,unbounded] wrapped">
+        <param dimensions="[]" primitive="false" type="role"/>
+      </type>
+      <type name="role">
+        <param name="role>appId" primitive="true" type="string"/>
+        <param name="role>desc" primitive="true" type="string"/>
+        <param name="role>roleId" primitive="true" type="string"/>
+        <param name="role>roleName" primitive="true" type="string"/>
+      </type>
+      <type name="userAppRequest">
+        <param name="baseRequest>page" primitive="false" type="page"/>
+        <param name="userAppRequest>appId" primitive="true" type="string"/>
+        <param name="userAppRequest>userId" primitive="true" type="string"/>
+      </type>
+      <type name="idsResponse">
+        <param name="baseResponse>msg" primitive="true" type="string"/>
+        <param name="baseResponse>page" primitive="false" type="page"/>
+        <param name="baseResponse>status" primitive="true" type="int"/>
+        <param name="baseResponse>total" primitive="true" type="int"/>
+        <param name="idsResponse>ids" primitive="true" type="string[0,unbounded] wrapped"/>
+      </type>
+      <type name="string[0,unbounded] wrapped">
+        <param dimensions="[]" primitive="true" type="string"/>
+      </type>
+      <type name="appResponse">
+        <param name="baseResponse>msg" primitive="true" type="string"/>
+        <param name="baseResponse>page" primitive="false" type="page"/>
+        <param name="baseResponse>status" primitive="true" type="int"/>
+        <param name="baseResponse>total" primitive="true" type="int"/>
+        <param name="appResponse>appIds" primitive="true" type="string[0,unbounded] wrapped"/>
+      </type>
+      <header name="serviceId" value="7d353ec017e3"/>
+      <header name="appId" value="baseApp"/>
+      <header name="accessToken" value="4D8773C4FAB0F4617CEBC066FA02C8C3"/>
+    </wservice>
+  </actionModel>
+</model:Model>

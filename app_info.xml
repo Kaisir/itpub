@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- application package info -->
+<package_info>
+
+	<!-- 应用信息 -->
+	<application>
+		<!-- 应用类型: web、mobile、web/mobile -->
+		<type>web</type>
+		<!-- 应用申请的application ID -->
+		<identity>4636571974501648</identity>
+		<!-- 应用缩写，由字母数字下划线组成，不超过40字节 -->
+		<name>itpub</name>
+		<!-- 应用中文名称，不超过20汉字 -->
+		<cname>itpub</cname>
+		<!-- 应用制造商,不超过20汉字 -->
+		<vendor>金智教育</vendor>
+		<!-- 应用的分类标签，用于定义云端应用的作用域。 -->
+		<category>06</category>
+		<!-- 应用描述，不超过300汉字 -->
+		<description></description>
+		<!-- 应用版本号: X.XX.XXX -->
+		<version>1.0.17</version>
+	</application>
+
+	<!-- 应用开发者调用总线API所需要的开发证书 -->
+	<cer>JVsIpFPgy+pMQB4Dsir7zjTRHKyQMCrGVswPSHBnlOIrfbQP2hwf07wLprQoe48HNMko9Ki/NJU21BZilsWZXZaHdBJMl7DlLFP7bIL4pchqBP88iaKhEx1B92iWDvnHL7gUJmiA8vWCUFxZn/wmsx4UQBcXYNQAld2Twq4PVxsruwX7hRatlPwMt/akOn+ObEwUOLp+tABmJerMGCfKPUoBV1dz1+DX2RQQtSSGmq38LhMDb0uHUJld+ivrJXQZJEXjdxeFie9NfDniWrpR7qBW+MzHw8Q7VDvgcDLKBnkhKBSEedTtNgcBd+Ahrga159KfZBHydVQsjlW2XTB9KQ==
+	</cer>
+
+	<!-- API清单 -->
+	<apis>
+		<host>http://apisdev.wisedu.com:8081/</host>
+		<api>
+			<category>5</category>
+			<serviceId>59d60961c7e0</serviceId>
+			<accessUrl>mdm_GroupReadAPIImplService/ProxyService/GroupReadAPIImplServiceProxyService
+			</accessUrl>
+			<apiType>soap</apiType>
+		</api>
+		<api>
+			<category>5</category>
+			<serviceId>7d353ec017e3</serviceId>
+			<accessUrl>mdm_AppReadAPIImplService/ProxyService/AppReadAPIImplServiceProxyService
+			</accessUrl>
+			<apiType>soap</apiType>
+		</api>
+		<api>
+			<category>5</category>
+			<serviceId>f92a9969f0c7</serviceId>
+			<accessUrl>mdm_DomainReadAPIImplService/ProxyService/DomainReadAPIImplServiceProxyService
+			</accessUrl>
+			<apiType>soap</apiType>
+		</api>
+	</apis>
+
+</package_info>
