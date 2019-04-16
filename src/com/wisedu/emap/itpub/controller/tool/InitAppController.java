@@ -26,9 +26,9 @@ public class InitAppController {
 	@RequestMapping("/initApp.do")
 	public String initAppTemplate(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// 应用名称
-		String appName = request.getParameter("appName");
+		String appName = request.getParameter("name");
 		// 应用中文名
-		String appCnName = request.getParameter("appCnName");
+		String appCnName = request.getParameter("cname");
 		if (StringUtil.isEmpty(appName) || StringUtil.isEmpty(appCnName))
 			return "参数错误！";
 		appCnName = new String(appCnName.getBytes("ISO-8859-1"), "UTF-8");
@@ -47,9 +47,9 @@ public class InitAppController {
 	@RequestMapping("/genDao.do")
 	public String genDaoImpl(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// 应用名称
-		String appName = request.getParameter("appName");
+		String appName = request.getParameter("name");
 		// dao类名
-		String daoName = request.getParameter("daoName");
+		String daoName = request.getParameter("dao");
 		if (StringUtil.isEmpty(appName) || StringUtil.isEmpty(daoName))
 			return "参数错误！";
 

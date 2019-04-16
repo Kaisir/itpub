@@ -14,8 +14,6 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import org.apache.commons.codec.binary.Base64;
-
 /**
  * 简单的AES加解密工具
  *
@@ -147,8 +145,7 @@ public class AESUtil {
 
 	public static String getEncodingAESKey() {
 		String aesKey = getRandomString(32);
-		// String encodingAESKey = Base64Util.encode(aesKey.getBytes());
-		String encodingAESKey = Base64.encodeBase64String(aesKey.getBytes());
+		String encodingAESKey = Base64Util.encode(aesKey.getBytes());
 		encodingAESKey = encodingAESKey.substring(0, encodingAESKey.length() - 1);
 		return encodingAESKey;
 	}
@@ -174,9 +171,7 @@ public class AESUtil {
 			String decodedStr = decrypt(encodedStr, password);
 			System.out.println(decodedStr);
 
-			// String strrr =
-			// Base64Util.encode("1aashdgfkjashgdfkjhgasjkdfuywhha".getBytes());
-			String strrr = Base64.encodeBase64String("1aashdgfkjashgdfkjhgasjkdfuywhha".getBytes());
+			String strrr = Base64Util.encode("1aashdgfkjashgdfkjhgasjkdfuywhha".getBytes());
 			System.out.println(strrr);
 		} catch (Exception e) {
 			e.printStackTrace();

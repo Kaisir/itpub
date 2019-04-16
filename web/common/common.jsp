@@ -4,5 +4,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<e:call id="setAppVar" className="com.wisedu.emap.wbggzj.util.UserUtils"
+<e:call id="setAppVar" className="com.wisedu.emap.itpub.util.UserUtils"
 	method="setAppVar" printResult="true" />

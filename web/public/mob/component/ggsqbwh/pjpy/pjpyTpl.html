@@ -1,0 +1,46 @@
+<div>
+	<mt-layout-container class="pjitp5pt1">
+	    <mt-layout-container class="bh-bg-color-light OPjitpd9yq">
+	    	<mt-box-group v-model="selectVal" :max="maxSelNum">
+			    <mt-cell-group>
+			        <mt-checkbox v-for="pjpy in pjpyArray" :name="pjpy.WID" :disabled="pjpy.disabled"  :key="pjpy.WID">
+			            {{pjpy.HJXSZ}}
+			        </mt-checkbox>
+			    </mt-cell-group>
+			</mt-box-group>
+       	<div v-show="!hasDatas" style="margin-left: 20px;margin-bottom: 10px;font-size: 14px;color: #92969c!important;">
+           	 暂无获奖记录信息
+        </div>
+		<mt-layout-container style="margin-top:8px;margin-bottom:8px;" v-show="editFlag">
+           	<mt-text type="default" class="bh-color-primary OPjipdball" @click.native="addhjjl()">添加获奖记录</mt-text>
+       	</mt-layout-container>
+	
+        <mt-layout-container class="OPjipdbalqp" v-show="confirmShow && editFlag">
+            <mt-button type="primary" :disabled="false" :plain="false" size="normal" class="OPjipdbalsm" @click.native="confirm">确认</mt-button>
+        </mt-layout-container>
+        	
+	    </mt-layout-container>
+	    <mt-layout-container v-show="isAdd">
+	        <mt-layout-container class="bh-bg-color-light cjauieny7 OPjitpyb0w">
+	            <mt-layout-container class="bh-bg-color-light sjas2k92v">
+                     <emapm-form :model="model" v-model="formValue" :custom-vm="customVm" ref="form" :readonly="readonly">
+                	</emapm-form>
+	                <mt-layout-container class="cjauoxxk8">
+	                    <mt-layout-left-right>
+	                        <mt-layout-left-right-item slot="left" position="left" class="OCjauozf0b">
+	                            <mt-layout-container class="sjakuinny">
+	                                <mt-button type="primary" :disabled="false" :plain="false" size="normal" class="bh-bg-color-light bh-color-gray-2 bh-border-color-gray-4 OSjakukrhg OCjauozf0hl OPjitpyb13z" @click="cancelAdd()">取消</mt-button>
+	                            </mt-layout-container>
+	                        </mt-layout-left-right-item>
+	                        <mt-layout-left-right-item slot="right" position="right" class="OCjauozf0c">
+	                            <mt-layout-container class="sjakudbpe">
+	                                <mt-button type="primary" :disabled="false" :plain="false" size="normal" class="OSjakuh37h OCjauozf0is OPjitpyb11b" @click="saveHjjl()">保存</mt-button>
+	                            </mt-layout-container>
+	                        </mt-layout-left-right-item>
+	                    </mt-layout-left-right>
+	                </mt-layout-container>
+	            </mt-layout-container>
+	        </mt-layout-container>
+	    </mt-layout-container>
+	</mt-layout-container>  
+</div>

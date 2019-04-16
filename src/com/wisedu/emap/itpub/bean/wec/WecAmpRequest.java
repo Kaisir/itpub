@@ -11,7 +11,7 @@ public class WecAmpRequest {
 	private String sign;
 	private String timestamp;
 	private String nonce;
-	private String echoStr;
+	private String echostr;
 
 	public String getSign() {
 		return sign;
@@ -38,10 +38,10 @@ public class WecAmpRequest {
 	}
 
 	public String getEchoStr() {
-		return echoStr;
+		return echostr;
 	}
 
-	public void setEchoStr(String echoStr) {
-		this.echoStr = echoStr;
+	public void setEchoStr(String echostr) {
+		this.echostr = echostr;
 	}
 }

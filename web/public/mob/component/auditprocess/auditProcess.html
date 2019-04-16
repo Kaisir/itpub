@@ -1,0 +1,34 @@
+<mt-layout-container class="bh-bg-color-light cjas1u9dg">
+    <mt-hr></mt-hr>
+    <!-- <mt-text type="default" text="审核进度" class="bh-color-gray sjakvwd5t OCjas22nki">审核进度</mt-text>
+-->
+    <mt-layout-container style="padding: 16px 20px!important;">
+        <mt-layout-left-right>
+            <mt-layout-left-right-item slot="left" position="left">
+                <mt-text type="default">审核流程</mt-text>
+            </mt-layout-left-right-item>
+            <mt-layout-left-right-item v-if="sfkch" slot="right" position="right">
+                <mt-text type="default" class="bh-color-gray-3 sjaky9s9n" style="text-align: right !important;" @click="recall">撤回</mt-text>
+            </mt-layout-left-right-item>
+        </mt-layout-left-right>
+    </mt-layout-container>
+    <mt-hr class="OCjas22nkj"></mt-hr>
+    <mt-steps paddingLeft="150" direction="vertical" selected="Step_1" class="OCjauorj8v">
+        <mt-step v-for="processData in processDatas" :status="(processData.DQZTDM==currentState?'process':(processData.DQZTDM==(currentState*-1)?'error':(processData.PX<Math.abs(currentPxcom)?'finish':'')))" class="bh-color-gray-3">
+            {{currentState=='0'?processData.DQZTDM_DISPLAY:(processData.DQZTDM_DISPLAY.replace("草稿","提交申请").replace("待",""))}}
+            <span class="bh-color-warning">
+                {{(currentState=='0' && processData.DQZTDM=='0' && thzt == '1')?'(被退回)':''}}
+            </span>
+            <div v-for="shyjData in processData.SHYJ">
+                <mt-text type="default" class="OCjaunojrix">
+                    {{shyjData.SHLX=='1'?'通过':(shyjData.SHLX=='2'?'不通过':(shyjData.SHLX=='3'?'退回':''))}}
+                </mt-text>
+                <mt-text type="default" class="OCjaunojrix">审核人：{{shyjData.SHR}}</mt-text>
+                <mt-text type="default" class="OCjaunojrix" wordwrap>审核意见：{{shyjData.SHYJ}}</mt-text>
+            </div>
+            <mt-text type="default" slot="left" class="bh-color-gray-4 OCjaunojrmr">{{processData.DQZTDM=='0'?sqsj:''}}</mt-text>
+            <mt-text v-for="shyjData in processData.SHYJ" type="default" slot="left" class="bh-color-gray-4 OCjaunojrmr">{{shyjData.SHSJ}}</mt-text>
+        </mt-step>
+        <mt-step text="结束" :status="('99'==currentState?'finish':'')" class="bh-color-gray-3">结束</mt-step>
+    </mt-steps>
+</mt-layout-container>

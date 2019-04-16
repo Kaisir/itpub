@@ -1,0 +1,22 @@
+<div>
+    <div v-if="hasDatas">
+        <mt-layout-container class="pje586krc" v-bind:style="styleObject">
+            <div v-for="item in list" @click="gotoTargetMenu" :roleId="item.id" ref="singelRole">
+                <mt-layout-container class="bh-bg-color-primary sjas2k92v OPje58cvky">
+                    <mt-text type="default" class="bh-color-light sjakvy2f1 OPje58cvl6m">{{item.text}}</mt-text>
+                </mt-layout-container>
+            </div>
+        </mt-layout-container>
+    </div>
+    <div v-else>
+        <mt-layout-container s-p="pjanpbxqf" smile-guid="d0f28af2_29dc_3a09_9aab_369753f60cfd" style="padding-top: 37px;">
+            <mt-layout-container s-c="cjal0qkp7" smile-guid="9a9f41cf_57a9_4fdc_4a64_ff618bf3d70b">
+                <mt-layout-container smile-guid="3ffa8ad2_b336_9556_6652_9e69cb923c05" style="text-align: center; margin-bottom: 24px;">
+                    <mt-image src="http://res.wisedu.com/images/circular-big.png" width="64px" height="64px" :watermark="false" s-s="sjal0q1ap" id="Image_1" smile-guid="eab91492_f208_1f97_07a6_8e8fb14505eb">
+                    </mt-image>
+                </mt-layout-container>
+                <mt-text type="default" text="您暂无访问此应用的权限" s-s="sjakvvvmy" smile-guid="1d884d7c_555b_bfbe_bd80_02a3969092ed" style="font-size: 18px; text-align: center; margin-bottom: 22px;">您暂无访问此应用的权限</mt-text>
+            </mt-layout-container>
+        </mt-layout-container>
+    </div>
+</div>

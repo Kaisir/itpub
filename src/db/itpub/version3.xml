@@ -63,4 +63,72 @@
 		MERGE INTO T_ITPUB_COMMON_DIC T USING (SELECT 'NO' DM FROM dual) N ON (T.DM = N.DM) WHEN NOT MATCHED THEN
 		INSERT(WID, DM, MC, PX, SFSY, SSZD) VALUES (SYS_GUID(), 'NO', '否', '2', '1', 'COMMON_STATE')
 	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'QR_01', '周一', 1, '1', 'BCFW_QR', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'QR_02', '周二', 2, '1', 'BCFW_QR', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'QR_03', '周三', 3, '1', 'BCFW_QR', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'QR_04', '周四', 4, '1', 'BCFW_QR', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'QR_05', '周五', 5, '1', 'BCFW_QR', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'QR_06', '周六', 6, '1', 'BCFW_QR', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'QR_07', '周日', 7, '1', 'BCFW_QR', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'ZT_OFF', '停运', 1, '1', 'BCFW_YXZT', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'ZT_ON', '运行中', 2, '1', 'BCFW_YXZT', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'KFRY_JZG', '教职工', 1, '1', 'CGSQ_KFRY', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'KFRY_XS', '学生', 2, '1', 'CGSQ_KFRY', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'KF_NO', '未开放', 2, '1', 'CGSQ_SFKF', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'KF_YES', '开放', 1, '1', 'CGSQ_SFKF', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'SM_NO', '不涉密', 2, '1', 'CGSQ_SFSM', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'SM_YES', '涉密', 1, '1', 'CGSQ_SFSM', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'LOCKED', '锁定', 1, '1', 'CGSQ_USE_STATE', null)
+	</data>
+	<data>
+		insert into t_itpub_common_dic (WID, DM, MC, PX, SFSY, SSZD, SSXT)
+		values (SYS_GUID(), 'OCCUPY', '占用', 2, '1', 'CGSQ_USE_STATE', null)
+	</data>
 </dbVersion>

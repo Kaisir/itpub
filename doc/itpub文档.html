@@ -1,0 +1,300 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:itpub文档</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="-">快速开始</h1>
+<p>项目地址：<a href="https://github.com/Kaisir/itpub">https://github.com/Kaisir/itpub</a>，<code>campuscrowd</code>开发者生态群：<code>489619187</code>，欢迎加群并讨论<code>EMAP</code>开发与<code>itpub</code>使用的相关问题。</p>
+<h2 id="-">首次配置</h2>
+<ol>
+<li>搭建好<code>EMAP</code>开发环境，最低需要<code>jdk1.6</code></li>
+<li>在<code>workspace</code>目录执行命令<code>git clone git@github.com:Kaisir/itpub.git</code>来下载应用包</li>
+<li>拷贝<code>lombok.jar</code>至<code>studio</code>目录，<code>jar</code>包可以在应用的<code>lib</code>文件夹找到</li>
+<li>修改<code>studio</code>目录下的<code>studio.ini</code>文件，在末尾添加<code>-javaagent:lombok.jar</code></li>
+<li>打开<code>emap studio</code>，确认应用没有报错（应用版本不是1.5的错误可以忽略）</li>
+</ol>
+<h2 id="-">如何继承</h2>
+<p>  每次新建应用后，想要使用<code>itpub</code>，需要新建一些必需的文件，这些文件与业务无关且每次都是固定的，可以使用以下方法自动生成：</p>
+<h3 id="-itpub">快速继承<code>itpub</code></h3>
+<ol>
+<li>创建业务应用</li>
+<li>打开业务应用的<code>app_info.xml</code>，找到<code>&lt;name&gt;</code>和<code>&lt;cname&gt;</code>标签</li>
+<li>访问<code>http://localhost:8080/emap/sys/itpub/initApp.do?name=应用英文名&amp;cname=应用中文名</code>，观察返回的结果</li>
+<li>刷新应用目录，确认生成的文件，自动生成的文件包括<code>AppIndexController</code>、<code>common.jsp</code>、<code>source.jsp</code>，修改的文件包括<code>index.jsp</code>、<code>config.js</code>、<code>.classpath</code>、<code>EMAP_APP</code></li>
+<li>输入<code>http://localhost:8080/emap/sys/应用英文名/auth.do</code>进行授权（与<code>funauthapp</code>授权原理相同）</li>
+<li>输入<code>http://localhost:8080/emap/sys/应用英文名/index.do</code>访问首页</li>
+</ol>
+<h3 id="-dao-impl-">生成<code>dao</code>类和<code>impl</code>类</h3>
+<ol>
+<li>访问<code>http://localhost:8080/emap/sys/itpub/genDao.do?name=应用英文名&amp;dao=目标dao名</code></li>
+<li><code>dao</code>名一般为数据模型名称，例如：<code>T_TEST_TABLE</code></li>
+<li>刷新相应的文件夹，确认生成的文件，自动生成的文件包括<code>T_TEST_TABLE.java</code>和<code>T_TEST_TABLE_IMPL.java</code></li>
+</ol>
+<h3 id="-">注意事项</h3>
+<ol>
+<li><code>workspace</code>目录需要放到<code>emap</code>开发工具的<code>studio</code>目录下</li>
+<li>并不删除默认的<code>index</code>目录，请手动删除</li>
+<li>重复执行不会覆盖，需要手动删除模板文件后才可再次执行</li>
+<li>每次执行都会批量生成上述所有文件，不支持生成指定某个文件</li>
+</ol>
+<h2 id="-">首次部署到学校需要检查的内容</h2>
+<p>如有修改，访问<code>/sys/itpub/reload/reloadProps.do</code>更新配置</p>
+<ol>
+<li><code>select * from t_itpub_props where key like &#39;%RESTFUL%&#39;</code>，总线配置</li>
+<li><code>select * from t_itpub_props where key =&#39;FOOTER_VERSION_INFO&#39;</code>，公司or学校版权信息</li>
+<li><code>select * from t_itpub_props where key =&#39;COMMON_PROPS.RES_SERVER&#39;</code>，<code>res</code>地址，默认<code>http</code>，如有需要请改成<code>https</code></li>
+<li><code>select * from t_itpub_props where key like &#39;%api.fromDept%&#39;</code>，人员总线取部门还是学院，总线是<code>getUsersWithDeptDetail2</code></li>
+</ol>
+<h1 id="-">常用方法</h1>
+<h2 id="-">数据库操作</h2>
+<p>利用封装好的<code>JDBC</code>方法进行增删改查操作，具体实现请查看<code>DbUtil.java</code>，以下方法均以<code>JDBC</code>库为基础，也可以选择使用<code>EMAP</code>底座提供的数据模型的增删改查方法，用法与上面类似，具体实现请查看<code>DsUtil.java</code>。</p>
+<pre><code class="lang-java">@Autowired
+private T_TEST_DAO dao;
+</code></pre>
+<ol>
+<li>保存和更新<pre><code class="lang-java">String wid = dao.saveOrUpdate(Map&lt;String, Object&gt; data);//保存或更新，返回主键
+dao.saveOrUpdate(List&lt;Map&lt;String, Object&gt;&gt; datas);//批量新增或更新，无返回值
+</code></pre>
+</li>
+<li>删除<pre><code class="lang-java">dao.deleteByWid(String wid);//根据WID删除记录
+dao.delByWids(List&lt;String&gt; wids);//通过idList删除数据
+</code></pre>
+</li>
+<li>查询<pre><code class="lang-java">Map&lt;String, Object&gt; result =  dao.queryRow(String sql, Object... params);//返回SQL语句的第一条记录
+List&lt;Map&lt;String, Object&gt;&gt; result = query(String sql, Object... params);//查询所有记录
+</code></pre>
+</li>
+<li>获取表名<pre><code class="lang-java">String tableName = dao.getTableName();//获取表名
+</code></pre>
+</li>
+<li>刷新字典<pre><code class="lang-java">dao.refreshDic(String appName, String dicId);//字典id是字典配置界面的编号
+</code></pre>
+</li>
+<li>执行<code>sql</code><pre><code class="lang-java">String sql = &quot;select a from test_table where b = ?&quot;;
+List&lt;Map&lt;String, Object&gt;&gt; result = DbUtil.query(sql, params);
+</code></pre>
+</li>
+</ol>
+<h2 id="-">用户工具类</h2>
+<p>具体实现请参考<code>UserUtils.java</code></p>
+<ol>
+<li>获取当前登陆用户的<code>id</code><pre><code class="lang-java">String userId = UserUtils.getCurUserId();
+</code></pre>
+</li>
+<li>获取当前登陆用户的角色<code>id</code><pre><code class="lang-java">String groupId = UserUtils.getCurGroupId();
+</code></pre>
+</li>
+<li>获取当前用户的姓名<pre><code class="lang-java">String userName = UserUtils.getCurrentUserName();
+</code></pre>
+</li>
+<li>根据用户<code>id</code>获取头像，<code>type</code>：{1 : 返回url, 2 : 返回流}<pre><code class="lang-java">String userName = UserUtils.getUserPicById(String id, String type);
+</code></pre>
+</li>
+<li>获取当前登陆用户的信息<pre><code class="lang-java">Map&lt;String, Object&gt; userInfo = UserUtils.getCurrentUserInfo();
+</code></pre>
+</li>
+<li>通过传入的<code>id</code>获取用户的信息<pre><code class="lang-java">List&lt;Map&lt;String, Object&gt;&gt; users = getUsersInfo(List&lt;String&gt; userIds);
+</code></pre>
+</li>
+<li>根据用户<code>id</code>和类型获取用户信息<pre><code class="lang-java">List&lt;Map&lt;String, Object&gt;&gt; users = getUserInfosByIds(String userId, String userType);
+</code></pre>
+</li>
+</ol>
+<h2 id="json-">JSON工具类</h2>
+<p>具体实现请参考<code>JsonUtils.java</code></p>
+<ol>
+<li>将<code>json</code>字符串解析成<code>Map&lt;String, Object&gt;</code><pre><code class="lang-java">Map&lt;String, Object&gt; map = JsonUtils.json2Map(String jsonStr);
+</code></pre>
+</li>
+<li>将<code>json</code>字符串解析成<code>List&lt;Map&lt;String, Object&gt;&gt;</code><pre><code class="lang-java">List&lt;Map&lt;String, Object&gt;&gt; list = JsonUtils.toListMap(String jsonStr);
+</code></pre>
+</li>
+<li>将<code>json</code>字符串解析成指定类型的数据，调用方式<code>JsonUtils.&lt;List&lt;String&gt;&gt;json2Type(&quot;[&#39;1&#39;, &#39;2&#39;]&quot;)</code>，类型不匹配时候会抛出异常<pre><code class="lang-java">public static &lt;T&gt; T json2Type(String jsonStr);
+</code></pre>
+</li>
+<li>将对象转换为<code>json</code>字符串<pre><code class="lang-java">String jsonStr = JsonUtils.toJsonStr(String str);
+</code></pre>
+</li>
+</ol>
+<h2 id="http-">HTTP请求工具类</h2>
+<p>具体实现请参考<code>HttpUtils.java</code></p>
+<ol>
+<li>获取参数，指定<code>key</code><pre><code class="lang-java">String str = HttpUtils.getParameter(String name);
+</code></pre>
+</li>
+<li>获取参数<pre><code class="lang-java">Map&lt;String, Object&gt; param = HttpUtils.getParameterMap();
+</code></pre>
+</li>
+<li>获取<code>RSA</code>加密的参数，指定<code>key</code><pre><code class="lang-java">String str = HttpUtils.getRsaParameter(String name);
+</code></pre>
+</li>
+<li>发起<code>http</code>请求<pre><code class="lang-java">String result = httpPost(CloseableHttpClient httpClient, HttpClientParam httpParam);
+</code></pre>
+</li>
+</ol>
+<h2 id="-">日期工具类</h2>
+<p>具体实现请参考<code>DateUtils.java</code></p>
+<ol>
+<li>获取当前时间，格式：<code>yyyy-MM-dd HH:mm:ss</code><pre><code class="lang-java">String dateStr = DateUtils.getCurrentDateTimeStr();
+</code></pre>
+</li>
+<li>获取当前日期，格式：<code>yyyy-MM-dd</code><pre><code class="lang-java">String dateStr = DateUtils.getCurDateStr();
+</code></pre>
+</li>
+<li>获取当前日期，格式：<code>yyyy/MM/dd</code><pre><code class="lang-java">String dateStr = DateUtils.getCurDateStr2();
+</code></pre>
+</li>
+</ol>
+<h2 id="-emap-">包装<code>emap</code>对象</h2>
+<p>具体实现请参考<code>EmapDataBuildUtil.java</code></p>
+<ol>
+<li>组装<code>emap</code>的下拉对象，可用于自定义字典<pre><code class="lang-java">Map&lt;String, Object&gt; resultMap = EmapDataBuildUtil.wrapDropList(List&lt;?&gt; rows);
+</code></pre>
+</li>
+<li>将动作查询的<code>queryResult</code>包装为结果返回<pre><code class="lang-java">Map&lt;String, Object&gt; resultMap = EmapDataBuildUtil.wrapQueryResult(String action, Object queryResult);
+</code></pre>
+</li>
+</ol>
+<h2 id="-">发送消息</h2>
+<p>具体实现请参考<code>ICommonService.java</code></p>
+<pre><code class="lang-java">@Autowired
+private ICommonService commonSV;
+</code></pre>
+<pre><code class="lang-java">/*
+     * 发送通用信息,指的是通过IT平台搭建的消息提醒系统
+     * @param xtName
+     *            发送消息的系统名称 eg:ymsqxt
+     * @param title
+     *            消息提醒的标题
+     * @param content
+     *            消息提醒的内容
+     * @param url
+     *            移动或者PC的url 如果含有移动和PC需要使用Constants.INVISIBLE_CHAR分割
+     *            其中如果没有PC的URL则前面为空 以Constants.INVISIBLE_CHAR开头
+     * @param recs
+     *            消息发送的接受用户
+     * @param isRecord
+     *            是否入库
+     * @throws Exception
+     */
+
+commonSV.sendCommonMsg(xtName, title, content, url, recs, isRecord);
+</code></pre>
+<h2 id="-">其他方法待补充</h2>
+<h1 id="-">常用前端组件</h1>
+<h2 id="-1">选人组件1</h2>
+<p>效果如下：</p>
+<p><img src="assets/1552041727411.png" alt="1552041727411"></p>
+<p>调用方法如下：</p>
+<pre><code class="lang-javascript">$.choosePerson(function(result) {
+                console.log(result);//选人之后的回调函数
+                }, 
+               {searchType : &#39;teacher&#39;}，//人员类型：teacher,student,all
+               {multiSelect : true
+            });
+</code></pre>
+<h2 id="-2">选人组件2</h2>
+<p>（待补充）</p>
+<h2 id="-emapflow-">获取<code>emapflow</code>流程图和审批记录</h2>
+<p>一般用在发起、审核、查看页面，效果如下：</p>
+<p><img src="assets/1552040931100.png" alt="1552040931100"></p>
+<p><img src="assets/1552040638537.png" alt="1552040638537"></p>
+<p>第一步，在<code>html</code>加入如下代码，建议放在<code>section</code>标签的末尾：</p>
+<pre><code class="lang-html">&lt;div
+            class=&quot;bh-col-md-12 bh-form-groupname sc-title-borderLeft bh-mb-24&quot;
+            title=&quot;流转信息&quot; bh-role-form-outline=&quot;title&quot;&gt;流转信息&lt;/div&gt;
+        &lt;div id=&quot;flowprocessview&quot; style=&quot;height: 120px;&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;flowprocesstable&quot; style=&quot;height: 120px; width: 100%&quot;&gt;&lt;/div&gt;
+        &lt;div
+            class=&quot;bh-col-md-12 bh-form-groupname sc-title-borderLeft bh-mb-24&quot;
+            title=&quot;流转信息&quot; bh-role-form-outline=&quot;title&quot; style=&quot;margin-top: 15px;&quot;&gt;流程信息&lt;/div&gt;
+&lt;div id=&quot;flowimg&quot;&gt;&lt;/div&gt;
+</code></pre>
+<p>第二步，在<code>js</code>中调用方法：</p>
+<pre><code class="lang-javascript">$.getFlowView(流程id：taskId,流程定义名称：defKey)；
+</code></pre>
+<h2 id="-">其他方法待补充</h2>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

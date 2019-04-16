@@ -492,7 +492,7 @@ public class UserUtils {
 
 			// 页脚版权信息
 			String footerText = ITPubPropsUtil.getProp("FOOTER_VERSION_INFO",
-					"版权信息：© 2016 江苏金智教育信息股份有限公司 苏ICP备10204514号");
+					"版权信息：© 2019 江苏金智教育信息股份有限公司 苏ICP备10204514号");
 			footerText = footerText.replaceAll("'", "\"");
 			request.setAttribute("footerText", footerText);
 			/*

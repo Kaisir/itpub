@@ -6,6 +6,10 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/servlet"/>
 	<classpathentry kind="con" path="com.wisedu.emap.studio.requiredBundles"/>
 	<classpathentry kind="lib" path="../emapAuth/pub_classes"/>
+	<classpathentry kind="lib" path="../emapAuth/classes"/>
 	<classpathentry kind="lib" path="../emapcomponent/pub_classes"/>
+	<classpathentry kind="lib" path="../emapcomponent/classes"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/funauthapp"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Emap_Core_Api"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>
