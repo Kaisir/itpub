@@ -865,7 +865,6 @@ $.extend({
 	/**
 	 * 获取当前日期，格式为YYYY-MM-DD
 	 * 
-	 * @return {}
 	 */
 	newDate : function() {
 		var date = new Date();
@@ -882,7 +881,44 @@ $.extend({
 		var currentdate = year + seperator1 + month + seperator1 + strDate;
 		return currentdate;
 	},
-
+	/**
+	 * 将日期转为格式为YYYY-MM-DD
+	 * 
+	 */
+	parseDate2Str : function(date) {
+		var seperator1 = "-";
+		var year = date.getFullYear();
+		var month = date.getMonth() + 1;
+		var strDate = date.getDate();
+		if (month >= 1 && month <= 9) {
+			month = "0" + month;
+		}
+		if (strDate >= 0 && strDate <= 9) {
+			strDate = "0" + strDate;
+		}
+		var currentdate = year + seperator1 + month + seperator1 + strDate;
+		return currentdate;
+	},
+	/**
+	 * 比较两个YYYY-MM-DD格式的日期
+	 * 
+	 * @return 日期相差的天数
+	 */
+	minusDate : function(dateStr1, dateStr2) {
+		var date1 = new Date(dateStr1.replace('/-/g', '/'));
+		var date2 = new Date(dateStr2.replace('/-/g', '/'));
+		return (date1 - date2) / 24 / 60 / 60 / 1000;
+	},
+	/**
+	 * 比较两个HH:mm格式的时间，假设是同一天
+	 * 
+	 * @return 时间相差的分钟数
+	 */
+	minusTime : function(timeStr1, timeStr2) {
+		var time1 = new Date("January 1,2000 " + timeStr1);
+		var time2 = new Date("January 1,2000 " + timeStr2);
+		return (time1 - time2) / 1000 / 60;
+	},
 	/**
 	 * 生成emapflow审批意见表格，简略版
 	 * 

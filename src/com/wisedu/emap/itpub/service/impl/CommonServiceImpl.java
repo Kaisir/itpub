@@ -31,6 +31,7 @@ import com.wisedu.emap.pedestal.app.IEmapAppContext;
 import com.wisedu.emap.pedestal.core.AppManager;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -251,6 +252,52 @@ public class CommonServiceImpl implements ICommonService {
 			}
 		}
 		return Lists.newArrayList();
+	}
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Map<String, Object>> getUserGroupsWithName(String userId, String appId,String currentRole) throws BizException {
+		IEmapAction<Object> action = content.getAction("getGroupsByAppIdAndUserId").createAction(null);
+        Map<String, Object> params = new HashMap<String, Object>();
+        UserAppRequest requestObj = new UserAppRequest();
+        requestObj.setAppId(appId);
+        requestObj.setUserId(userId);
+        params.put("userAppRequest", requestObj);
+        Map<String, Object> resultObject = (Map<String, Object>) action.execute(params);
+        if ("200".equals(resultObject.get("status").toString()))
+        {
+            // 请求成功返回
+            List<Map<String, Object>> groups = (List<Map<String, Object>>) resultObject.get("groups");
+            if (groups != null && groups.size() > 0)
+            {
+                List<Map<String, Object>> retGroups = new ArrayList<Map<String, Object>>();
+                boolean hasActive = false;
+                for (int i = 0; i < groups.size(); i++)
+                {
+                    Map<String, Object> group = groups.get(i);
+                    String id = (String) group.get("groupId");
+                    if (StringUtils.isEmpty(id))
+                    {
+                        continue;
+                    }
+                    Map<String, Object> newGroup = new HashMap<String, Object>();
+                    String text = (String) group.get("name");
+                    newGroup.put("id", id);
+                    newGroup.put("text", text);
+                    if (id.equals(currentRole))
+                    {
+                        newGroup.put("active", true);
+                        hasActive = true;
+                    }
+                    retGroups.add(newGroup);
+                }
+                if (!hasActive && retGroups.size() > 0)
+                {
+                    retGroups.get(0).put("active", true);
+                }
+                return retGroups;
+            }
+        }
+        return null;
 	}
 
 	@Override

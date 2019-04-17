@@ -12,13 +12,6 @@
 
 <!-- 项目样式 -->
 <link type="text/css" rel="stylesheet" href="<%=request.getContextPath() %>/sys/emapflow/public/css/style.css">
-<!-- 富文本编辑器依赖css -->
-<link rel="stylesheet" href="http://res.wisedu.com/bower_components/summernote-0.8.1/dist/summernote-bs3.min.css">
-<link rel="stylesheet" href="http://res.wisedu.com/bower_components/summernote-0.8.1/dist/summernote.css">
-<!-- 富文本编辑器依赖js -->
-<script src="http://res.wisedu.com/fe_components/commonlib.js"></script>
-<script src="http://res.wisedu.com/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="http://res.wisedu.com/bower_components/summernote-0.8.1/dist/summernote.js"></script>
 <!-- 公共js依赖 -->
 <script src="<%= com.wisedu.emap.base.core.EmapContext.getStaticResourceRoot() %>/bower_components/vue2/vue.min.js"></script>
 <script src="<%= com.wisedu.emap.base.core.EmapContext.getStaticResourceRoot() %>/fe_components/iview2/iview.min.js"></script>

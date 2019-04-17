@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:model="http://www.wisedu.com/emap/model/model" dataSource="DB_EMAP_BIZ_BASE">
+  <dataModel name="T_ITPUB_PROPS" queryOrder="" type="table">
+    <item caption="WID" colName="WID" length="40" name="WID" pK="true" type="String">
+      <attribute name="enabled" value="true"/>
+      <attribute name="defaultValue" value="env:custom.guid"/>
+      <attribute name="prepare" value="checkWID_onlyEmpty"/>
+      <attribute name="defaultValueUseInModify" value="false"/>
+    </item>
+    <item caption="所属的系统" colName="XT" length="20" name="XT" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="常量的中文说明" colName="NAME" length="50" name="NAME" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="常量的键" colName="KEY" length="50" name="KEY" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <item caption="常量的值" colName="VALUE" length="200" name="VALUE" type="String">
+      <attribute name="enabled" value="true"/>
+    </item>
+    <rowFactors/>
+  </dataModel>
+</model:Model>

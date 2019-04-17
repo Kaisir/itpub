@@ -1,5 +1,6 @@
 package com.wisedu.emap.itpub.util.wec;
 
+import java.io.InputStream;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -33,32 +34,36 @@ public class OpenApiUtils {
 	@SuppressWarnings("unchecked")
 	private static void loadOpenApiConf() {
 		try {
-			Document document = new SAXReader()
-					.read(OpenApiUtils.class.getClassLoader().getResourceAsStream("open-api-config.xml"));
-			Element e = document.getRootElement();
-			// 获取根节点下的open api的host子节点
-			String host = e.elementTextTrim("host");
-			// 如果配置的host为空
-			if (StringUtil.isEmpty(host)) {
-				log.error("OPEN API未配置host节点，无法加载无host的api配置信息。");
-			}
-			Iterator<Element> apisIter = e.elementIterator();
-			while (apisIter.hasNext()) {
-				Element apiEle = apisIter.next();
-				if (!"api".equals(apiEle.getName())) {
-					continue;
+			InputStream input = OpenApiUtils.class.getClassLoader().getResourceAsStream("open-api-config.xml");
+			if (input != null) {
+				Document document = new SAXReader().read(input);
+				Element e = document.getRootElement();
+				// 获取根节点下的open api的host子节点
+				String host = e.elementTextTrim("host");
+				// 如果配置的host为空
+				if (StringUtil.isEmpty(host)) {
+					log.error("OPEN API未配置host节点，无法加载无host的api配置信息。");
 				}
-				String apiId = apiEle.elementTextTrim("apiId");
-				String url = apiEle.elementTextTrim("url");
-				if (StringUtil.isNotEmpty(apiId) && StringUtil.isNotEmpty(url)) {
-					if (url.startsWith("http")) {
-						openApiMap.put(apiId, url);
-					} else {
-						openApiMap.put(apiId, host + url);
+				Iterator<Element> apisIter = e.elementIterator();
+				while (apisIter.hasNext()) {
+					Element apiEle = apisIter.next();
+					if (!"api".equals(apiEle.getName())) {
+						continue;
+					}
+					String apiId = apiEle.elementTextTrim("apiId");
+					String url = apiEle.elementTextTrim("url");
+					if (StringUtil.isNotEmpty(apiId) && StringUtil.isNotEmpty(url)) {
+						if (url.startsWith("http")) {
+							openApiMap.put(apiId, url);
+						} else {
+							openApiMap.put(apiId, host + url);
+						}
 					}
 				}
+				log.info("^_^ OPEN API REST CONFIG LOAD SUCCESS!!!");
+			} else {
+				log.info(" OPEN API未配置open-api-config.xml文件。");
 			}
-			log.info("^_^ OPEN API REST CONFIG LOAD SUCCESS!!!");
 		} catch (Exception e) {
 			log.error(">_< OPEN API REST CONFIG LOAD FAILED!!!", e);
 		}

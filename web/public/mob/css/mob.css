@@ -1,0 +1,241 @@
+body {
+    margin: 0;
+    background-color: #F9F9F9;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.preventScroll {}
+
+.preventScroll .main__content {
+    height: calc(100vh - 44Px);
+    overflow: hidden;
+}
+
+body .main__content {
+    display: flex;
+    display: -webkit-flex;
+    flex-flow: column;
+    -webkit-flex-flow: column;
+    margin-top: 12px;
+}
+
+body .main {
+    margin-top: 60px;
+    height: 100%;
+    width: 100%;
+    display: block;
+    -webkit-display: block;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+}
+
+body.preventScroll {}
+
+.preventScroll .main__content {
+    height: calc(100vh - 44Px);
+    overflow: hidden;
+}
+
+.onlineconsultation-mt-header {
+    background-color: #f9f9f9 !important;
+    border-bottom: 0.05rem solid #eeeeee;
+    color: #333333 !important;
+    font-size: 1.7rem !important;
+    height: 44Px!important;
+    padding: 0 15Px!important;
+    z-index: 10!important;
+}
+
+.header-back {
+    width: 1.9rem;
+    height: 2.1rem;
+    margin-left: 0.5rem;
+}
+
+.mint-header {
+    background-color: #FFFFFF!important;
+}
+
+.mint-header-title {
+    color: #333333;
+    font-size: 34px;
+}
+
+.cell-item:before {
+    color: #fff!important;
+}
+
+.cellcenter {
+    font-size: 1.4rem;
+}
+
+.celltip {
+    font-size: 1.4rem;
+}
+
+.bh-row {
+    width: 100%;
+}
+
+.bh-col-md-12 {
+    width: 100%;
+    float: left;
+}
+
+.bh-col-md-11 {
+    width: 91.66666667%;
+    float: left;
+}
+
+.bh-col-md-10 {
+    width: 83.33333333%;
+    float: left;
+}
+
+.bh-col-md-9 {
+    width: 75%;
+    float: left;
+}
+
+.bh-col-md-8 {
+    width: 66.66666667%;
+    float: left;
+}
+
+.bh-col-md-7 {
+    width: 58.33333333%;
+    float: left;
+}
+
+.bh-col-md-6 {
+    width: 50%;
+    float: left;
+}
+
+.bh-col-md-5 {
+    width: 41.66666667%;
+    float: left;
+}
+
+.bh-col-md-4 {
+    width: 33.33333333%;
+    float: left;
+}
+
+.bh-col-md-3 {
+    width: 25%;
+    float: left;
+}
+
+.bh-col-md-2 {
+    width: 16.66666667%;
+    float: left;
+}
+
+.bh-col-md-1 {
+    width: 8.33333333%;
+    float: left;
+}
+
+.greyWord {
+    color: #BBBBBB !important;
+}
+
+.link {
+    font-size: 24px;
+}
+
+.pje586krc .OPje58hmjei {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+}
+
+.pje586krc .OPje58cvky {
+    position: relative !important;
+    box-shadow: 0px 4px 20px #b5daff !important;
+    height: 64px !important;
+    margin: 10px 20px 35px 20px !important;
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
+    border-radius: 6px 6px 6px 6px !important;
+}
+
+.pje586krc .OPje58cvl6m {
+    text-align: center !important;
+    font-weight: bolder !important;
+}
+
+.pje586krc .OPje58hmj3 {
+    position: relative !important;
+    box-shadow: 0px 4px 20px #b5daff !important;
+    height: 64px !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    margin-bottom: 35px !important;
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
+    border-radius: 6px 6px 6px 6px !important;
+}
+
+.pje586krc .OPje58hmj4 {
+    text-align: center !important;
+    font-weight: bolder !important;
+}
+
+.pje586krc .OPje58hmjcm {
+    position: relative !important;
+    box-shadow: 0px 4px 20px #b5daff !important;
+    height: 64px !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    margin-bottom: 35px !important;
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
+    border-radius: 6px 6px 6px 6px !important;
+}
+
+.pje586krc .OPje58hmjcg {
+    text-align: center !important;
+    font-weight: bolder !important;
+}
+
+.pje586krc .OPje58hmjdu {
+    position: relative !important;
+    box-shadow: 0px 4px 20px #b5daff !important;
+    height: 64px !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+    margin-bottom: 0px !important;
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
+    border-radius: 6px 6px 6px 6px !important;
+}
+
+.pje586krc .OPje58hmjbi {
+    text-align: center !important;
+    font-weight: bolder !important;
+}
+
+#selectrole{
+	position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+#app{
+	position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}

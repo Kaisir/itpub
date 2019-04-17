@@ -1,0 +1,65 @@
+<div v-if="dataReady">
+    <div v-for="hdqk,index in hdqkArray" v-show="hasDatas">
+        <mt-layout-container class="pjiv14ry0">
+            <mt-layout-container class="bh-bg-color-light OPjiv1edx9">
+                <mt-layout-container class="OPjiv1edxa">
+                    <mt-text type="default" class="OPjiv1edxka">活动情况{{index+1}}</mt-text>
+                    <mt-text type="default" v-show="hdqksfkwh && editFlag" class="bh-color-primary OPjiv1edxvl" @click.native="deleteHdqk(hdqk)">删除</mt-text>
+                    <mt-text type="default" v-show="hdqksfkwh && editFlag" class="bh-color-primary OPjiv1edxws" @click.native="editHdqk(index)">编辑</mt-text>
+                </mt-layout-container>
+                <mt-hr>
+                </mt-hr>
+            </mt-layout-container>
+        </mt-layout-container>
+        <emapm-form :model="model" v-model="hdqk" :custom-vm="customVm" :ref="hdqk.formName" :readonly="hdqk.formRead" titlewidth="140px" textalign>
+        </emapm-form>
+        <mt-layout-container style="margin-top:10px;margin-bottom:20px" v-show="!hdqk.formRead">
+            <mt-layout-container class="cjauoxxk8">
+                <mt-layout-left-right>
+                    <mt-layout-left-right-item slot="left" position="left" class="OCjauozf0b">
+                        <mt-layout-container class="sjakuinny">
+                            <mt-button type="primary" :disabled="false" :plain="false" size="normal" class="bh-bg-color-light bh-color-gray-2 bh-border-color-gray-4 OSjakukrhg OCjauozf0hl OPjipdgesw" @click.native="cancelEdit(index)">取消</mt-button>
+                        </mt-layout-container>
+                    </mt-layout-left-right-item>
+                    <mt-layout-left-right-item slot="right" position="right" class="OCjauozf0c">
+                        <mt-layout-container class="sjakudbpe">
+                            <mt-button type="primary" :disabled="false" :plain="false" size="normal" class="OSjakuh37h OCjauozf0is OPjipdget5b" @click.native="saveEdit(index)">保存</mt-button>
+                        </mt-layout-container>
+                    </mt-layout-left-right-item>
+                </mt-layout-left-right>
+            </mt-layout-container>
+        </mt-layout-container>
+    </div>
+    <div v-show="!hasDatas " style="margin-left: 20px;margin-top:10px;margin-bottom: 10px;font-size: 14px;color: #92969c!important; ">
+        	暂无活动情况信息
+    </div>
+    <mt-layout-container v-show="hdqksfkwh && !isEdit && editFlag">
+        <mt-text type="default" class="bh-color-primary OPjipdball" @click.native="addHdqk">添加活动情况</mt-text>
+    </mt-layout-container>
+
+    <mt-layout-container class="OPjipdbalqp" v-show="!isAdd && !isEdit && editFlag">
+        <mt-button type="primary" :disabled="false" :plain="false" size="normal" class="OPjipdbalsm" @click.native="confirm">确认</mt-button>
+    </mt-layout-container>
+    <div v-show="isAdd">
+        <div style="margin-top:10px ">
+            <emapm-form :model="model" v-model="formValue" :custom-vm="customVm" ref="formAdd" :readonly="readonly" titlewidth="140px" textalign>
+            </emapm-form>
+        </div>
+        <mt-layout-container style="margin-top:20px;margin-bottom:20px">
+            <mt-layout-container class="cjauoxxk8">
+                <mt-layout-left-right>
+                    <mt-layout-left-right-item slot="left" position="left" class="OCjauozf0b">
+                        <mt-layout-container class="sjakuinny">
+                            <mt-button type="primary" :disabled="false" :plain="false" size="normal" class="bh-bg-color-light bh-color-gray-2 bh-border-color-gray-4 OSjakukrhg OCjauozf0hl OPjipdgesw" @click.native="cancelAdd">取消</mt-button>
+                        </mt-layout-container>
+                    </mt-layout-left-right-item>
+                    <mt-layout-left-right-item slot="right" position="right" class="OCjauozf0c">
+                        <mt-layout-container class="sjakudbpe">
+                            <mt-button type="primary" :disabled="false" :plain="false" size="normal" class="OSjakuh37h OCjauozf0is OPjipdget5b" @click.native="saveAdd">保存</mt-button>
+                        </mt-layout-container>
+                    </mt-layout-left-right-item>
+                </mt-layout-left-right>
+            </mt-layout-container>
+        </mt-layout-container>
+    </div>
+</div>

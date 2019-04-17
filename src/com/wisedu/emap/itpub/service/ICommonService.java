@@ -164,6 +164,16 @@ public interface ICommonService {
 	 * @return
 	 */
 	public List<String> getUserGroups(String userId, String appId) throws BizException;
+	/**
+	 * 获取指定用户和应用的用户组
+	 * 
+	 * @date 2019年3月26日15:06:29
+	 * @author xlfu 01114221
+	 * @param userId
+	 * @param appId
+	 * @return
+	 */
+	public List<Map<String, Object>> getUserGroupsWithName(String userId, String appId,String currentRole) throws BizException;
 
 	/**
 	 * 获取当前登陆用户的具体信息

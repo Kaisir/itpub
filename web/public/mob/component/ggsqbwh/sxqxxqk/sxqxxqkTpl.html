@@ -1,0 +1,18 @@
+<div class="pjbyhvdj2 pjc70vw5k" v-if="dataReady">
+    <emapm-form v-show="hasDatas" :model="model" v-model="formValue" :custom-vm="customVm" ref="form" :readonly="readonly" titlewidth="140px" textalign>
+    </emapm-form>
+
+    <div v-show="!hasDatas" style="margin-left: 20px;margin-top: 20px;font-size: 14px;color: #92969c!important;">
+        暂无上学年学习情况信息
+    </div>
+
+    <div style="height:10px"></div>
+    <mt-layout-container v-if='editFlag' position="bottom" class="OPjbyoio4xh">
+        <mt-hr></mt-hr>
+        <mt-layout-container class="bh-bg-color-light sjas2k92v OPjbyoio55v" @click.native="saveXxqk">
+            <mt-layout-container class="sjakudbpe">
+                <mt-button type="primary" :disabled="false" :plain="false" size="normal" class="OSjakuh37h OPjbyoio5fc">确认</mt-button>
+            </mt-layout-container>
+        </mt-layout-container>
+    </mt-layout-container>
+</div>
